@@ -1,0 +1,29 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Notification Blocking">
+
+        <SwitchPreferenceCompat
+            app:key="intercept_notifications"
+            app:title="Can Intercept Notifications" />
+
+        <SwitchPreferenceCompat
+            app:dependency="intercept_notifications"
+            app:key="block_notifications"
+            app:summaryOff="Intercepted notifications will still appear in the notification panel"
+            app:summaryOn="Intercepted notifications will only appear in this app"
+            app:title="Can Block Notifications" />
+
+        <SwitchPreferenceCompat
+            app:dependency="intercept_notifications"
+            app:key="remove_cancelled"
+            app:summaryOff="Notifications you cancel will remain in this app"
+            app:summaryOn="Notifications you cancel will also be removed from this app"
+            app:title="Remove Cancelled Notifications"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="App Filter"
+        app:key="app_list_category"/>
+
+</PreferenceScreen>
